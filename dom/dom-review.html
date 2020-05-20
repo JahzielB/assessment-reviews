@@ -27,5 +27,37 @@
       <button id="highlight">Highlight</button>
     </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var favFood = document.querySelector("#input");
+
+      $("#add-to-list").click(function () {
+        $("#favorite-food").append("<li>" + favFood.value + "</li>");
+      });
+
+      $("#change-me").dblclick(function () {
+        $(this).css("background-color", "purple");
+      });
+
+      var cohortName = document.querySelector("#cohort-name");
+
+      $("#change-cohort").click(function () {
+        $("#my-cohort").text(cohortName.value);
+      });
+
+      $("#highlight").click(function () {
+        $("#my-cohort").css("background-color", "yellow");
+      });
+
+      function pinkBackground() {
+        var container = document.querySelector(".container");
+        var changeColor = setTimeout(function () {
+          container.style.backgroundColor = "pink";
+        }, 3000)
+      }
+      pinkBackground();
+    });
+  </script>
 </body>
 </html>
